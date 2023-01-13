@@ -143,14 +143,8 @@ export default function MainRoadmap() {
 								variant="h6"
 								component="span"
 							>
-								{/* Developing Robosuinu's Metaverse Ecosystem */}
 								Launching Robosu Inu
 							</Typography>
-							{/* The metaverse era exploded and Robosuinu also
-								wanted to enter 
-								The robosuinu core team continue marketing
-                                Smart Contract creation
-                            */}
 							<Typography color="primary">
 								Smart Contract creation and verification
 							</Typography>
@@ -158,7 +152,7 @@ export default function MainRoadmap() {
 								Website launch
 							</Typography>
 							<Typography color="primary">
-								SushiSwap V3 listing
+								UniSwap V3 listing
 							</Typography>
 							<Typography color="primary">
 								Launching Robosu AI Bot

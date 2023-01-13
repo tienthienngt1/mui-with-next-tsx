@@ -31,10 +31,10 @@ const devList = [
 		src: "/dextool.png",
 	},
 	{
-		name: "sushiswap",
+		name: "uniswap",
 		width: 100,
 		height: 100,
-		src: "/sushiswap.png",
+		src: "/uniswap.png",
 	},
 ];
 
