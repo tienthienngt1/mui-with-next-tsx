@@ -27,6 +27,7 @@ export default function MainRoadmap() {
 						opacity: 1,
 						y: 0,
 					}}
+					transition={{ bounce: 0.65, type: "spring" }}
 					viewport={{ once: true, amount: 0.1 }}
 				>
 					<Typography align="center" variant="h2" color="primary">
@@ -43,6 +44,7 @@ export default function MainRoadmap() {
 					opacity: 1,
 					y: 0,
 				}}
+				transition={{ bounce: 0.65, type: "spring" }}
 				viewport={{ once: true, amount: 0.1 }}
 			>
 				<Timeline position="alternate">

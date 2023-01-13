@@ -56,6 +56,7 @@ const MainParter = () => {
 					opacity: 1,
 					y: 0,
 				}}
+				transition={{ bounce: 0.65, type: "spring" }}
 				viewport={{ once: true, amount: 0.1 }}
 			>
 				<WrapPartner variant="h2" align="center" color="primary">
@@ -76,13 +77,16 @@ const MainParter = () => {
 							opacity: 0,
 							y: 50,
 						}}
+						transition={{ bounce: 0.65, type: "spring" }}
 						viewport={{ once: true, amount: 0.1 }}
 						whileInView={{
 							opacity: 1,
 							y: 0,
 							transition: {
 								delay: k * 0.3,
-								duration: 0.2,
+								duration: 0.5,
+								type: "spring",
+								bounce: 0.65,
 							},
 						}}
 						whileHover={{

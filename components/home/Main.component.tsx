@@ -26,6 +26,7 @@ const Main = () => {
 							key="main-image-home"
 							animate={{
 								y: [0, -30, 30, 0],
+								rotate: [0, -10, 10, 0],
 							}}
 							transition={{
 								ease: "linear",
@@ -58,7 +59,7 @@ const Main = () => {
 								opacity: 1,
 								y: 0,
 								transition: {
-									delay: 2,
+									delay: 1.5,
 									duration: 1,
 								},
 							}}
