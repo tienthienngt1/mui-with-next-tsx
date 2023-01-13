@@ -34,7 +34,7 @@ const MainStacking = () => {
 	const handleConnect = () => setShow(true);
 	const handleClose = () => setShow(false);
 	return (
-		<Container>
+		<Container sx={{ marginTop: 3 }}>
 			<Typography align="center" variant="h2" color="primary">
 				POOLS
 			</Typography>
@@ -59,20 +59,24 @@ const MainStacking = () => {
 								direction="row"
 							>
 								<Avatar
-									src="/logo.png"
+									src="/robosustake.png"
 									alt="logo"
 									sx={{ width: 80, height: 80 }}
 								/>
-								<Box sx={{ px: 1 }}>
+								<Box
+									sx={{
+										width: "100%",
+									}}
+								>
 									<Typography
 										variant="h6"
 										align="center"
 										color="primary.light"
 									>
-										Robosu
+										Robosu Inu
 									</Typography>
 									<Typography
-										variant="caption"
+										variant="subtitle2"
 										align="center"
 										color="primary.light"
 									>
@@ -81,6 +85,7 @@ const MainStacking = () => {
 								</Box>
 							</Stack>
 							<Stack
+								sx={{ paddingTop: 2 }}
 								direction="row"
 								justifyContent="space-between"
 							>
@@ -96,7 +101,7 @@ const MainStacking = () => {
 									color="primary.light"
 									gutterBottom
 								>
-									100%
+									200%
 								</Typography>
 							</Stack>
 							<Stack
@@ -115,7 +120,7 @@ const MainStacking = () => {
 									color="primary.light"
 									gutterBottom
 								>
-									Robosu Token
+									Robosu Inu
 								</Typography>
 							</Stack>
 							<Stack
@@ -134,7 +139,7 @@ const MainStacking = () => {
 									variant="body1"
 									color="primary.light"
 								>
-									Robosu Token
+									Robosu Inu
 								</Typography>
 							</Stack>
 							<Stack
@@ -146,7 +151,7 @@ const MainStacking = () => {
 									color="secondary"
 									gutterBottom
 								>
-									Robosu Token
+									Robosu Inu
 								</Typography>
 								<Typography
 									gutterBottom

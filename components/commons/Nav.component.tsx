@@ -21,117 +21,36 @@ import { styled } from "@mui/system";
 
 const list = [
 	{
-		title: "Home",
-		href: "/",
-		target: "_self",
-	},
-	{
 		title: "Stacking",
 		href: "/stacking",
 		target: "_self",
 	},
 ];
 
-const WrapStack = styled(Stack)({
-	"@media(max-width: 768px)": {
-		display: "none",
-	},
-});
-
-const WrapDrawer = styled("div")({
-	"@media(min-width: 768px)": {
-		display: "none",
-	},
-});
-
-const MenuDrawer = () => {
-	const [isOpen, setOpen] = useState(false);
-	const router = useRouter();
-	useEffect(() => {
-		router.events.on("routeChangeComplete", () => setOpen(false));
-		return () => {
-			router.events.off("routeChangeComplete", () => {});
-		};
-	}, [router.asPath]);
-
-	return (
-		<WrapDrawer>
-			<Button onClick={() => setOpen(!isOpen)}>
-				<Menu />
-			</Button>
-			<Drawer
-				anchor="left"
-				open={isOpen}
-				onClose={() => {
-					setOpen(false);
-				}}
-			>
-				<List>
-					{list.map((l) => (
-						<Link
-							key={l.target + Math.random() * 999999}
-							href={l.href}
-							target={l.target}
-						>
-							<ListItem sx={{ width: "250px" }}>
-								<Typography sx={{ color: PRIMARY_COLOR }}>
-									{l.title}
-								</Typography>
-							</ListItem>
-						</Link>
-					))}
-				</List>
-			</Drawer>
-		</WrapDrawer>
-	);
-};
-
 const Nav = () => {
 	return (
 		<Container maxWidth="xl">
-			<Grid container>
-				<Grid xs={2}>
-					<Link href="/">
-						<Image
-							src="/logo.png"
-							alt="logo"
-							width={120}
-							height={50}
-							style={{ cursor: "pointer" }}
-						/>
+			<Stack
+				direction="row"
+				justifyContent="space-between"
+				alignItems="center"
+				spacing={1}
+			>
+				<Link href="/">
+					<Image
+						src="/logo.png"
+						alt="logo"
+						width={200}
+						height={35}
+						style={{ cursor: "pointer" }}
+					/>
+				</Link>
+				{/* {list.map((l) => (
+					<Link href={l.href} target={l.target}>
+						<ButtonCustom key={l.title} title={l.title} />
 					</Link>
-				</Grid>
-				<Grid xs={10}>
-					<Box
-						sx={{
-							height: "100%",
-							display: "flex",
-							alignItems: "center",
-							justifyContent: "flex-end",
-						}}
-					>
-						<MenuDrawer />
-						<WrapStack
-							direction="row"
-							justifyContent="flex-end"
-							alignItems="center"
-							divider={
-								<Divider orientation="vertical" flexItem />
-							}
-							spacing={1}
-						>
-							{list.map((l) => (
-								<Link href={l.href} target={l.target}>
-									<ButtonCustom
-										key={l.title}
-										title={l.title}
-									/>
-								</Link>
-							))}
-						</WrapStack>
-					</Box>
-				</Grid>
-			</Grid>
+				))} */}
+			</Stack>
 		</Container>
 	);
 };

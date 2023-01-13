@@ -53,7 +53,7 @@ export default function MainRoadmap() {
 							variant="h6"
 							color="primary"
 						>
-							PHASE 4 2022
+							PHASE 1
 						</TimelineOppositeContent>
 						<TimelineSeparator>
 							<TimelineConnector
@@ -72,7 +72,7 @@ export default function MainRoadmap() {
 								variant="h6"
 								component="span"
 							>
-								Robosu is Born
+								Robosu Inu is Born
 							</Typography>
 							<Typography color="primary">
 								The AI and robotics industry in 2022 was grow
@@ -86,7 +86,45 @@ export default function MainRoadmap() {
 							variant="h6"
 							color="primary"
 						>
-							PHASE 1 2023
+							PHASE 2
+						</TimelineOppositeContent>
+						<TimelineSeparator>
+							<TimelineConnector
+								sx={{ bgcolor: "primary.main" }}
+							/>
+							<TimelineDot color="primary">
+								<Groups2Icon />
+							</TimelineDot>
+							<TimelineConnector
+								sx={{ bgcolor: "primary.main" }}
+							/>
+						</TimelineSeparator>
+						<TimelineContent sx={{ py: "12px", px: 2 }}>
+							<Typography color="primary" variant="h6">
+								Preparing and building community
+							</Typography>
+							<Typography color="primary">
+								The Robosu Inu's team steps forward from the
+								community
+							</Typography>
+							<Typography color="primary">
+								Launching channels on Social Media
+							</Typography>
+							<Typography color="primary">
+								Marketing campaign before launch
+							</Typography>
+							<Typography color="primary">
+								Cooperation with many influencers
+							</Typography>
+						</TimelineContent>
+					</TimelineItem>
+					<TimelineItem>
+						<TimelineOppositeContent
+							sx={{ m: "auto 0" }}
+							variant="h6"
+							color="primary"
+						>
+							PHASE 3
 						</TimelineOppositeContent>
 						<TimelineSeparator>
 							<TimelineConnector
@@ -95,7 +133,9 @@ export default function MainRoadmap() {
 							<TimelineDot color="primary">
 								<CodeIcon />
 							</TimelineDot>
-							<TimelineConnector />
+							<TimelineConnector
+								sx={{ bgcolor: "primary.main" }}
+							/>
 						</TimelineSeparator>
 						<TimelineContent sx={{ py: "12px", px: 2 }}>
 							<Typography
@@ -103,14 +143,28 @@ export default function MainRoadmap() {
 								variant="h6"
 								component="span"
 							>
-								Web design and development
+								{/* Developing Robosuinu's Metaverse Ecosystem */}
+								Launching Robosu Inu
 							</Typography>
-							<Typography color="primary" variant="h6">
-								Launch project
+							{/* The metaverse era exploded and Robosuinu also
+								wanted to enter 
+								The robosuinu core team continue marketing
+                                Smart Contract creation
+                            */}
+							<Typography color="primary">
+								Smart Contract creation and verification
 							</Typography>
 							<Typography color="primary">
-								The robotsu core team steps forward from the
-								community
+								Website launch
+							</Typography>
+							<Typography color="primary">
+								SushiSwap V3 listing
+							</Typography>
+							<Typography color="primary">
+								Launching Robosu AI Bot
+							</Typography>
+							<Typography color="primary.dark">
+								Launching stake ecosystem
 							</Typography>
 						</TimelineContent>
 					</TimelineItem>
@@ -120,39 +174,7 @@ export default function MainRoadmap() {
 							variant="h6"
 							color="primary.dark"
 						>
-							PHASE 2 2023
-						</TimelineOppositeContent>
-						<TimelineSeparator>
-							<TimelineConnector />
-							<TimelineDot>
-								<SettingsSystemDaydreamIcon />
-							</TimelineDot>
-							<TimelineConnector />
-						</TimelineSeparator>
-						<TimelineContent sx={{ py: "12px", px: 2 }}>
-							<Typography
-								color="primary.dark"
-								variant="h6"
-								component="span"
-							>
-								Developing Robosu's Metaverse Ecosystem
-							</Typography>
-							<Typography color="primary.dark">
-								The metaverse era exploded and Robosu also
-								wanted to enter
-							</Typography>
-							<Typography color="primary.dark">
-								The robotsu core team continue marketing
-							</Typography>
-						</TimelineContent>
-					</TimelineItem>
-					<TimelineItem>
-						<TimelineOppositeContent
-							sx={{ m: "auto 0" }}
-							variant="h6"
-							color="primary.dark"
-						>
-							PHASE 3 2023
+							PHASE 4
 						</TimelineOppositeContent>
 						<TimelineSeparator>
 							<TimelineConnector />
@@ -168,11 +190,19 @@ export default function MainRoadmap() {
 								component="span"
 							></Typography>
 							<Typography color="primary.dark" variant="h6">
-								Launch Metaverses and robosu's ecosystem
+								Continue marketing
 							</Typography>
 							<Typography color="primary.dark">
-								The robotsu core team marketing and ambition
-								list on Binance
+								Trending on dextools
+							</Typography>
+							<Typography color="primary.dark">
+								Listing on CGK and CMC
+							</Typography>
+							<Typography color="primary.dark">
+								Promoting on Youtube and Twitter
+							</Typography>
+							<Typography color="primary.dark">
+								Preparation for Top 20 CEX listing
 							</Typography>
 						</TimelineContent>
 					</TimelineItem>
@@ -182,7 +212,7 @@ export default function MainRoadmap() {
 							variant="h6"
 							color="primary.dark"
 						>
-							PHASE 4 2023
+							PHASE 5
 						</TimelineOppositeContent>
 						<TimelineSeparator>
 							<TimelineConnector />
@@ -198,11 +228,40 @@ export default function MainRoadmap() {
 								component="span"
 							></Typography>
 							<Typography color="primary.dark" variant="h6">
-								List on Binance
+								Developing Robosu Inu's Metaverse Ecosystem
 							</Typography>
 							<Typography color="primary.dark">
-								The robotsu core team marketing work Binance's
-								team together and list on Binance exchange
+								The metaverse era exploded and Robosu Inu also
+								wanted to enter
+							</Typography>
+							<Typography color="primary.dark">
+								Releasing Robosu Inu's NFT collection
+							</Typography>
+						</TimelineContent>
+					</TimelineItem>
+					<TimelineItem>
+						<TimelineOppositeContent
+							sx={{ m: "auto 0" }}
+							variant="h6"
+							color="primary.dark"
+						>
+							PHASE 6
+						</TimelineOppositeContent>
+						<TimelineSeparator>
+							<TimelineConnector />
+							<TimelineDot>
+								<Groups2Icon />
+							</TimelineDot>
+							<TimelineConnector />
+						</TimelineSeparator>
+						<TimelineContent sx={{ py: "12px", px: 2 }}>
+							<Typography
+								color="primary.dark"
+								variant="h6"
+								component="span"
+							></Typography>
+							<Typography color="primary.dark" variant="h6">
+								More to be announced...
 							</Typography>
 						</TimelineContent>
 					</TimelineItem>

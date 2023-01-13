@@ -1,10 +1,11 @@
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import TelegramIcon from "@mui/icons-material/Telegram";
-import TwitterIcon from "@mui/icons-material/Twitter";
 import Link from "components/commons/Link.component";
 import IconButtonCustom from "components/commons/IconButtonCustom.component";
 import Typography from "@mui/material/Typography";
+import { TELEGRAM_LINK } from "config/constants";
+// import TwitterIcon from "@mui/icons-material/Twitter";
 
 const SocialButton = () => {
 	return (
@@ -16,18 +17,18 @@ const SocialButton = () => {
 				direction="row"
 				spacing={2}
 				justifyContent="center"
-				sx={{ my: 10 }}
+				sx={{ marginTop: 2 }}
 			>
-				<Link href="https://t.me/PepeCoin_Group" target="_blank">
+				<Link href={TELEGRAM_LINK} target="_blank">
 					<IconButtonCustom>
 						<TelegramIcon />
 					</IconButtonCustom>
 				</Link>
-				<Link href="https://t.me/PepeCoin_Group" target="_blank">
+				{/* <Link href="https://t.me/PepeCoin_Group" target="_blank">
 					<IconButtonCustom>
 						<TwitterIcon />
 					</IconButtonCustom>
-				</Link>
+				</Link> */}
 			</Stack>
 		</Box>
 	);

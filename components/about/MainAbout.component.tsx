@@ -1,24 +1,42 @@
-import { Avatar, Box, Container, Stack, Typography } from "@mui/material";
+import {
+	Avatar,
+	Box,
+	Container,
+	IconButton,
+	Stack,
+	Typography,
+} from "@mui/material";
 import { PRIMARY_COLOR } from "../../config/constants";
 import { useWidthWindow } from "hooks/useWidthWindow";
 import { motion } from "framer-motion";
+import Link from "components/commons/Link.component";
 
 const devList = [
 	{
 		name: "Biden",
-		career: "Ceo",
+		career: "CEO",
+		href: "https://t.me/",
 		desc: "abcdef",
 		src: "/avatar.png",
 	},
 	{
 		name: "CZ",
-		career: "Ceo",
+		career: "CMO",
+		href: "https://t.me/",
 		desc: "abcdef",
 		src: "/avatar.png",
 	},
 	{
+		name: "Albert Fowler",
+		href: "https://t.me/fowlerdev",
+		career: "DEV",
+		desc: "abcdef",
+		src: "/avatarDev.png",
+	},
+	{
 		name: "Elon Musk",
-		career: "Ceo",
+		href: "https://t.me/",
+		career: "Designer",
 		desc: "abcdef",
 		src: "/avatar.png",
 	},
@@ -62,39 +80,44 @@ const MainAbout = () => {
 							opacity: 1,
 							y: 0,
 							transition: {
-								delay: k,
-								duration: 0.5,
+								delay: k * 0.5,
+								duration: 0.3,
 							},
 						}}
 						whileHover={{
 							scale: 1.1,
 						}}
 					>
-						<Box
-							sx={{
-								width: 200,
-								height: 280,
-								borderRadius: 5,
-								background: PRIMARY_COLOR,
-							}}
-						>
-							<Stack
-								direction="column"
-								justifyContent="center"
-								alignItems="center"
-								spacing={2}
-								sx={{ padding: "10px 0" }}
+						<Link href={d.href} target="_blank">
+							<Box
+								sx={{
+									width: 200,
+									height: 210,
+									borderRadius: 5,
+									background: PRIMARY_COLOR,
+								}}
 							>
-								<Avatar
-									src={d.src}
-									sx={{ width: 100, height: 100 }}
-									alt="avatar"
-								/>
-								<Typography>{d.name}</Typography>
-								<Typography>{d.career}</Typography>
-								<Typography>{d.desc}</Typography>
-							</Stack>
-						</Box>
+								<Stack
+									direction="column"
+									justifyContent="center"
+									alignItems="center"
+									spacing={2}
+									sx={{ padding: "10px 0" }}
+								>
+									<Avatar
+										src={d.src}
+										sx={{ width: 100, height: 100 }}
+										alt="avatar"
+									/>
+									<Typography sx={{ color: "#fff" }}>
+										{d.name}
+									</Typography>
+									<Typography sx={{ color: "#fff" }}>
+										{d.career}
+									</Typography>
+								</Stack>
+							</Box>
+						</Link>
 					</motion.div>
 				))}
 			</Stack>

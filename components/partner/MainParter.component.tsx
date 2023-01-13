@@ -1,39 +1,52 @@
-import { Avatar, Box, Container, Stack, Typography } from "@mui/material";
+import {
+	Avatar,
+	Box,
+	Container,
+	Stack,
+	Typography,
+	useMediaQuery,
+} from "@mui/material";
 import { PRIMARY_COLOR } from "../../config/constants";
 import { useWidthWindow } from "hooks/useWidthWindow";
 import { motion } from "framer-motion";
+import { styled } from "@mui/system";
 
 const devList = [
 	{
-		name: "coint1",
+		name: "coinmarketcap",
 		width: 100,
 		height: 100,
-		src: "/avatar.png",
+		src: "/coinmarketcap.jpg",
 	},
 	{
-		name: "coint2",
+		name: "coingeco",
 		width: 100,
 		height: 100,
-		src: "/avatar.png",
+		src: "/coingeco.png",
 	},
 	{
-		name: "coint2",
+		name: "dextool",
 		width: 100,
 		height: 100,
-		src: "/avatar.png",
+		src: "/dextool.png",
 	},
 	{
-		name: "coint",
+		name: "sushiswap",
 		width: 100,
 		height: 100,
-		src: "/avatar.png",
+		src: "/sushiswap.png",
 	},
 ];
 
+const WrapPartner = styled(Typography)({
+	" @media (max-width: 600px)": {
+		fontSize: "30px",
+	},
+});
 const MainParter = () => {
 	const { width } = useWidthWindow();
 	return (
-		<Container>
+		<Container sx={{ my: 20 }}>
 			<motion.div
 				initial={{
 					opacity: 0,
@@ -45,12 +58,12 @@ const MainParter = () => {
 				}}
 				viewport={{ once: true }}
 			>
-				<Typography variant="h2" align="center" color="primary">
-					PARNER
-				</Typography>
+				<WrapPartner variant="h2" align="center" color="primary">
+					PARTNERS
+				</WrapPartner>
 			</motion.div>
 			<Stack
-				direction={width && width < 600 ? "column" : "row"}
+				direction={{ xs: "column", md: "row" }}
 				alignItems="center"
 				justifyContent="center"
 				sx={{ my: 5 }}
@@ -68,8 +81,8 @@ const MainParter = () => {
 							opacity: 1,
 							y: 0,
 							transition: {
-								delay: k,
-								duration: 0.5,
+								delay: k * 0.3,
+								duration: 0.2,
 							},
 						}}
 						whileHover={{
