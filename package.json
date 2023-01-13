@@ -18,6 +18,7 @@
     "@mui/lab": "^5.0.0-alpha.115",
     "@mui/material": "latest",
     "@next/font": "latest",
+    "@vercel/analytics": "^0.1.8",
     "framer-motion": "^8.4.2",
     "next": "latest",
     "react": "latest",

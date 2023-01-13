@@ -10,6 +10,7 @@ import BackgroundStar from "components/commons/BackgroundStar.component";
 import Loading from "components/commons/Loading.component";
 import "../styles/global.css";
 import "../styles/backgroundStar.css";
+import { Analytics } from "@vercel/analytics/react";
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
@@ -31,23 +32,26 @@ export default function MyApp(props: MyAppProps) {
 		}, 3000);
 	}, []);
 	return (
-		<CacheProvider value={emotionCache}>
-			<Head>
-				<meta
-					name="viewport"
-					content="initial-scale=1, width=device-width"
-				/>
-			</Head>
-			<ThemeProvider theme={theme}>
-				{isLoading ? (
-					<Loading />
-				) : (
-					<TransitionEffect>
-						<Component {...pageProps} />
-					</TransitionEffect>
-				)}
-			</ThemeProvider>
-			<BackgroundStar />
-		</CacheProvider>
+		<>
+			<CacheProvider value={emotionCache}>
+				<Head>
+					<meta
+						name="viewport"
+						content="initial-scale=1, width=device-width"
+					/>
+				</Head>
+				<ThemeProvider theme={theme}>
+					{isLoading ? (
+						<Loading />
+					) : (
+						<TransitionEffect>
+							<Component {...pageProps} />
+						</TransitionEffect>
+					)}
+				</ThemeProvider>
+				<BackgroundStar />
+			</CacheProvider>
+			<Analytics />
+		</>
 	);
 }
