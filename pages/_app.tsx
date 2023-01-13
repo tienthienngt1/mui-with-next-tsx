@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import Head from "next/head";
 import { AppProps } from "next/app";
 import { ThemeProvider } from "@mui/material/styles";
@@ -6,10 +7,9 @@ import theme from "../config/theme";
 import createEmotionCache from "../config/createEmotionCache";
 import TransitionEffect from "components/commons/TransitionEffect.component";
 import BackgroundStar from "components/commons/BackgroundStar.component";
+import Loading from "components/commons/Loading.component";
 import "../styles/global.css";
 import "../styles/backgroundStar.css";
-import Loading from "components/commons/Loading.component";
-import { useEffect, useState } from "react";
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
@@ -28,7 +28,7 @@ export default function MyApp(props: MyAppProps) {
 	useEffect(() => {
 		setTimeout(() => {
 			setLoading(false);
-		}, 4000);
+		}, 3000);
 	}, []);
 	return (
 		<CacheProvider value={emotionCache}>
@@ -39,9 +39,13 @@ export default function MyApp(props: MyAppProps) {
 				/>
 			</Head>
 			<ThemeProvider theme={theme}>
-				<TransitionEffect>
-					{isLoading ? <Loading /> : <Component {...pageProps} />}
-				</TransitionEffect>
+				{isLoading ? (
+					<Loading />
+				) : (
+					<TransitionEffect>
+						<Component {...pageProps} />
+					</TransitionEffect>
+				)}
 			</ThemeProvider>
 			<BackgroundStar />
 		</CacheProvider>

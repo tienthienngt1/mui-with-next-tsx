@@ -20,12 +20,7 @@ type NotifyT = {
 
 const Notify = ({ open, handleClose }: NotifyT) => {
 	return (
-		<Snackbar
-			open={open}
-			autoHideDuration={5000}
-			onClose={handleClose}
-			anchorOrigin={{ vertical: "top", horizontal: "center" }}
-		>
+		<Snackbar open={open} autoHideDuration={5000} onClose={handleClose}>
 			<Alert severity="info" sx={{ width: "100%" }}>
 				Comming Soon
 			</Alert>

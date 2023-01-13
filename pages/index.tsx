@@ -5,6 +5,7 @@ import Nav from "components/commons/Nav.component";
 import Container from "@mui/material/Container";
 import MainAbout from "components/about/MainAbout.component";
 import MainRoadmap from "components/roadmap/MainRoadmap.component";
+import MainParter from "components/partner/MainParter.component";
 
 export default function Home() {
 	return (
@@ -14,6 +15,7 @@ export default function Home() {
 				<Nav />
 				<Main />
 				<MainAbout />
+				<MainParter />
 				<MainRoadmap />
 				<Copyright />
 			</Container>

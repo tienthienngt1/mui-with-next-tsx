@@ -22,23 +22,12 @@ import { styled } from "@mui/system";
 const list = [
 	{
 		title: "Home",
-		url: "/",
-		target: "_self",
-	},
-	{
-		title: "About Us",
-		url: "aboutpage",
-		target: "_self",
-	},
-	{
-		title: "Road Map",
-		url: "roadmappage",
+		href: "/",
 		target: "_self",
 	},
 	{
 		title: "Stacking",
-		url: "/stacking",
-		router: true,
+		href: "/stacking",
 		target: "_self",
 	},
 ];
@@ -81,7 +70,7 @@ const MenuDrawer = () => {
 					{list.map((l) => (
 						<Link
 							key={l.target + Math.random() * 999999}
-							href={l.url}
+							href={l.href}
 							target={l.target}
 						>
 							<ListItem sx={{ width: "250px" }}>
@@ -98,20 +87,19 @@ const MenuDrawer = () => {
 };
 
 const Nav = () => {
-	const router = useRouter();
-	const handleClick = (url: string, isRouter?: boolean) => () => {
-		if (isRouter) {
-			return router.push(url);
-		} else {
-			const element = document.getElementById(url);
-			element?.scrollIntoView();
-		}
-	};
 	return (
 		<Container maxWidth="xl">
 			<Grid container>
 				<Grid xs={2}>
-					<Image src="/logo.png" alt="logo" width={120} height={50} />
+					<Link href="/">
+						<Image
+							src="/logo.png"
+							alt="logo"
+							width={120}
+							height={50}
+							style={{ cursor: "pointer" }}
+						/>
+					</Link>
 				</Grid>
 				<Grid xs={10}>
 					<Box
@@ -133,12 +121,12 @@ const Nav = () => {
 							spacing={1}
 						>
 							{list.map((l) => (
-								<ButtonCustom
-									key={l.title}
-									//@ts-ignore
-									onClick={handleClick(l.url, l.router)}
-									title={l.title}
-								/>
+								<Link href={l.href} target={l.target}>
+									<ButtonCustom
+										key={l.title}
+										title={l.title}
+									/>
+								</Link>
 							))}
 						</WrapStack>
 					</Box>

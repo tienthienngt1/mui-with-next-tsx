@@ -3,20 +3,10 @@ import Box from "@mui/material/Box";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Typography from "@mui/material/Typography";
-import { PRIMARY_COLOR } from "config/constants";
+import { LINK_TOKEN, PRIMARY_COLOR } from "config/constants";
 import SocialButton from "./SocialButton.component";
 import ButtonCustom from "components/commons/ButtonCustom.component";
-
-const variants = {
-	inimage: {
-		opacity: 1,
-		y: [0, -50, 50, 0],
-		transition: {
-			duration: 1,
-			delay: 0.5,
-		},
-	},
-};
+import Link from "components/commons/Link.component";
 
 const Main = () => {
 	return (
@@ -33,14 +23,15 @@ const Main = () => {
 					>
 						<motion.div
 							key="main-image-home"
-							variants={variants}
-							animate={{ y: [0, -20, 20, 0] }}
+							animate={{
+								y: [0, -30, 30, 0],
+							}}
 							transition={{
 								ease: "linear",
 								repeat: Infinity,
 								duration: 10,
+								delay: 2,
 							}}
-							initial="inimage"
 						>
 							<Image
 								src="/robosu.png"
@@ -64,10 +55,13 @@ const Main = () => {
 							key="main-home-text"
 							animate={{
 								opacity: 1,
-								x: 0,
-								transition: { duration: 1 },
+								y: 0,
+								transition: {
+									delay: 2,
+									duration: 1,
+								},
 							}}
-							initial={{ x: 100 }}
+							initial={{ y: 500, opacity: 0 }}
 						>
 							<Typography
 								variant="h3"
@@ -91,14 +85,16 @@ const Main = () => {
 								Purr-Fect Coin For You
 							</Typography>
 							<Typography variant="h2" align="center">
-								<ButtonCustom
-									//@ts-ignore
-									sx={{ fontSize: "30px" }}
-									title="Buy Now"
-								/>
+								<Link href={LINK_TOKEN} target="_blank">
+									<ButtonCustom
+										//@ts-ignore
+										sx={{ fontSize: "30px" }}
+										title="Buy Now"
+									/>
+								</Link>
 							</Typography>
+							<SocialButton />
 						</motion.div>
-						<SocialButton />
 					</Box>
 				</Grid>
 			</Grid>
