@@ -29,7 +29,7 @@ export default function MainRoadmap() {
 						variant="h6"
 						color="primary"
 					>
-						PHRASE 4 2022
+						PHASE 4 2022
 					</TimelineOppositeContent>
 					<TimelineSeparator>
 						<TimelineConnector sx={{ bgcolor: "primary.main" }} />
@@ -58,7 +58,7 @@ export default function MainRoadmap() {
 						variant="h6"
 						color="primary"
 					>
-						PHRASE 1 2023
+						PHASE 1 2023
 					</TimelineOppositeContent>
 					<TimelineSeparator>
 						<TimelineConnector sx={{ bgcolor: "primary.main" }} />
@@ -90,7 +90,7 @@ export default function MainRoadmap() {
 						variant="h6"
 						color="primary.dark"
 					>
-						PHRASE 2 2023
+						PHASE 2 2023
 					</TimelineOppositeContent>
 					<TimelineSeparator>
 						<TimelineConnector />
@@ -122,7 +122,7 @@ export default function MainRoadmap() {
 						variant="h6"
 						color="primary.dark"
 					>
-						PHRASE 3 2023
+						PHASE 3 2023
 					</TimelineOppositeContent>
 					<TimelineSeparator>
 						<TimelineConnector />
@@ -152,7 +152,7 @@ export default function MainRoadmap() {
 						variant="h6"
 						color="primary.dark"
 					>
-						PHRASE 4 2023
+						PHASE 4 2023
 					</TimelineOppositeContent>
 					<TimelineSeparator>
 						<TimelineConnector />

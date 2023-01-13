@@ -6,11 +6,13 @@ import MainAbout from "components/about/MainAbout.component";
 
 export default function About() {
 	return (
-		<Container maxWidth="xl">
-			<ContractAddress />
-			<Nav />
-			<MainAbout />
-			<Copyright />
-		</Container>
+		<>
+			<Container id="aboutpage" maxWidth="xl">
+				<ContractAddress />
+				<Nav />
+				<MainAbout />
+				<Copyright />
+			</Container>
+		</>
 	);
 }

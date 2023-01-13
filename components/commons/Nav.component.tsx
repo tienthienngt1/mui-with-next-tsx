@@ -12,12 +12,12 @@ import Button from "@mui/material/Button";
 import Link from "components/commons/Link.component";
 import Box from "@mui/material/Box";
 import { useEffect, useState } from "react";
-import { useWidthWindow } from "hooks/useWidthWindow";
 import { useRouter } from "next/router";
 import { Menu } from "@mui/icons-material";
 import Container from "@mui/material/Container";
 import { PRIMARY_COLOR } from "config/constants";
 import ButtonCustom from "./ButtonCustom.component";
+import { styled } from "@mui/system";
 
 const list = [
 	{
@@ -27,21 +27,33 @@ const list = [
 	},
 	{
 		title: "About Us",
-		url: "/about",
+		url: "#aboutpage",
 		target: "_self",
 	},
 	{
 		title: "Road Map",
-		// url: "https://t.me/PepeCoin_Group",
-		url: "/roadmap",
+		url: "#roadmappage",
 		target: "_self",
 	},
 	{
 		title: "Stacking",
 		url: "/stacking",
+		router: true,
 		target: "_self",
 	},
 ];
+
+const WrapStack = styled(Stack)({
+	"@media(max-width: 768px)": {
+		display: "none",
+	},
+});
+
+const WrapDrawer = styled("div")({
+	"@media(min-width: 768px)": {
+		display: "none",
+	},
+});
 
 const MenuDrawer = () => {
 	const [isOpen, setOpen] = useState(false);
@@ -52,8 +64,9 @@ const MenuDrawer = () => {
 			router.events.off("routeChangeComplete", () => {});
 		};
 	}, [router.asPath]);
+
 	return (
-		<>
+		<WrapDrawer>
 			<Button onClick={() => setOpen(!isOpen)}>
 				<Menu />
 			</Button>
@@ -80,12 +93,22 @@ const MenuDrawer = () => {
 					))}
 				</List>
 			</Drawer>
-		</>
+		</WrapDrawer>
 	);
 };
 
 const Nav = () => {
-	const { width } = useWidthWindow();
+	const router = useRouter();
+	const handleClick = (url: string, isRouter?: boolean) => () => {
+		if (isRouter) {
+			return router.push(url);
+		} else {
+			const element = document.getElementById(url);
+			console.log(element);
+
+			element?.scrollIntoView();
+		}
+	};
 	return (
 		<Container maxWidth="xl">
 			<Grid container>
@@ -101,29 +124,25 @@ const Nav = () => {
 							justifyContent: "flex-end",
 						}}
 					>
-						{width && width < 600 ? (
-							<MenuDrawer />
-						) : (
-							<Stack
-								direction="row"
-								justifyContent="flex-end"
-								alignItems="center"
-								divider={
-									<Divider orientation="vertical" flexItem />
-								}
-								spacing={1}
-							>
-								{list.map((l) => (
-									<Link
-										key={l.title}
-										href={l.url}
-										target={l.target}
-									>
-										<ButtonCustom title={l.title} />
-									</Link>
-								))}
-							</Stack>
-						)}
+						<MenuDrawer />
+						<WrapStack
+							direction="row"
+							justifyContent="flex-end"
+							alignItems="center"
+							divider={
+								<Divider orientation="vertical" flexItem />
+							}
+							spacing={1}
+						>
+							{list.map((l) => (
+								<ButtonCustom
+									key={l.title}
+									//@ts-ignore
+									onClick={handleClick(l.url, l.router)}
+									title={l.title}
+								/>
+							))}
+						</WrapStack>
 					</Box>
 				</Grid>
 			</Grid>

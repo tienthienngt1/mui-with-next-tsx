@@ -6,6 +6,7 @@ html {
 		rgba(0, 0, 0, 0.93) 11.2%,
 		rgb(63, 61, 61) 78.9%
 	);
+	scroll-behavior: smooth;
 }
 body {
 	padding: 0;

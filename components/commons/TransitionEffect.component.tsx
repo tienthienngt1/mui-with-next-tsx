@@ -52,7 +52,7 @@ const TransitionEffect = ({ children }: Props) => {
 
 	return (
 		<div className="effect-3">
-			<AnimatePresence initial={true} exitBeforeEnter>
+			<AnimatePresence initial={true} mode="wait">
 				<motion.div
 					key={asPath}
 					variants={!shouldReduceMotion ? variants : undefined}
