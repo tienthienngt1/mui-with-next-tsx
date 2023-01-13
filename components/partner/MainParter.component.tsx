@@ -50,13 +50,13 @@ const MainParter = () => {
 			<motion.div
 				initial={{
 					opacity: 0,
-					y: 500,
+					y: 50,
 				}}
 				whileInView={{
 					opacity: 1,
 					y: 0,
 				}}
-				viewport={{ once: true }}
+				viewport={{ once: true, amount: 0.1 }}
 			>
 				<WrapPartner variant="h2" align="center" color="primary">
 					PARTNERS
@@ -74,9 +74,9 @@ const MainParter = () => {
 						key={d.name}
 						initial={{
 							opacity: 0,
-							y: 500,
+							y: 50,
 						}}
-						viewport={{ once: true }}
+						viewport={{ once: true, amount: 0.1 }}
 						whileInView={{
 							opacity: 1,
 							y: 0,

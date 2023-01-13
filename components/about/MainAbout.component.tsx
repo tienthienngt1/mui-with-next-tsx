@@ -45,13 +45,13 @@ const MainAbout = () => {
 			<motion.div
 				initial={{
 					opacity: 0,
-					y: 500,
+					y: 50,
 				}}
 				whileInView={{
 					opacity: 1,
 					y: 0,
 				}}
-				viewport={{ once: true }}
+				viewport={{ once: true, amount: 0.1 }}
 			>
 				<Typography variant="h2" align="center" color="primary">
 					ABOUT US
@@ -69,9 +69,8 @@ const MainAbout = () => {
 						key={d.name}
 						initial={{
 							opacity: 0,
-							y: 500,
+							y: 50,
 						}}
-						viewport={{ once: true }}
 						whileInView={{
 							opacity: 1,
 							y: 0,
@@ -80,6 +79,7 @@ const MainAbout = () => {
 								duration: 0.3,
 							},
 						}}
+						viewport={{ once: true, amount: 0.1 }}
 						whileHover={{
 							scale: 1.1,
 						}}

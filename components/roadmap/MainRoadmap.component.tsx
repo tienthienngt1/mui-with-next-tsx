@@ -21,13 +21,13 @@ export default function MainRoadmap() {
 				<motion.div
 					initial={{
 						opacity: 0,
-						y: 500,
+						y: 50,
 					}}
 					whileInView={{
 						opacity: 1,
 						y: 0,
 					}}
-					viewport={{ once: true }}
+					viewport={{ once: true, amount: 0.1 }}
 				>
 					<Typography align="center" variant="h2" color="primary">
 						ROAD MAP
@@ -37,13 +37,13 @@ export default function MainRoadmap() {
 			<motion.div
 				initial={{
 					opacity: 0,
-					y: 500,
+					y: 50,
 				}}
 				whileInView={{
 					opacity: 1,
 					y: 0,
 				}}
-				viewport={{ once: true }}
+				viewport={{ once: true, amount: 0.1 }}
 			>
 				<Timeline position="alternate">
 					<TimelineItem>
