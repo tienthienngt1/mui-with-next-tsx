@@ -45,8 +45,8 @@ const Main = () => {
 							<Image
 								src="/robosu.png"
 								alt="robosu"
-								width={300}
-								height={400}
+								width={250}
+								height={250}
 							/>
 						</motion.div>
 					</Box>

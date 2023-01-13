@@ -27,12 +27,12 @@ const list = [
 	},
 	{
 		title: "About Us",
-		url: "#aboutpage",
+		url: "aboutpage",
 		target: "_self",
 	},
 	{
 		title: "Road Map",
-		url: "#roadmappage",
+		url: "roadmappage",
 		target: "_self",
 	},
 	{
@@ -104,8 +104,6 @@ const Nav = () => {
 			return router.push(url);
 		} else {
 			const element = document.getElementById(url);
-			console.log(element);
-
 			element?.scrollIntoView();
 		}
 	};

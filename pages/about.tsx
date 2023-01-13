@@ -7,7 +7,7 @@ import MainAbout from "components/about/MainAbout.component";
 export default function About() {
 	return (
 		<>
-			<Container id="aboutpage" maxWidth="xl">
+			<Container className="aboutpage" maxWidth="xl">
 				<ContractAddress />
 				<Nav />
 				<MainAbout />
