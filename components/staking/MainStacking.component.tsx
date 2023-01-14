@@ -11,8 +11,9 @@ import {
 } from "@mui/material";
 import IconLottie from "components/commons/IconLottie.component";
 import { PRIMARY_COLOR } from "config/constants";
-import { connectWeb3 } from "core/connectWeb3";
-import { useState } from "react";
+import { connectWeb3, getBalance } from "core/connectWeb3";
+import { useState, useEffect } from "react";
+declare var window: any;
 
 type NotifyT = {
 	open: boolean;
@@ -35,12 +36,51 @@ const MainStacking = () => {
 	const [balance, setBalance] = useState<string>();
 	const handleConnect = async () => {
 		const res = await connectWeb3();
-		if (res) {
-			setAddress(res.address);
-			setBalance(res.balance);
+		if (address !== res?.account) {
+			setAddress(res?.account);
+			setBalance(res?.balance);
 		}
 	};
 	const handleClose = () => setShow(false);
+
+	useEffect(() => {
+		try {
+			if (window.ethereum) {
+				window.ethereum.on(
+					"accountsChanged",
+					async (account: string[]) => {
+						if (address === account[0]) return;
+						if (!account[0]) {
+							setAddress("");
+							setBalance("");
+							return;
+						}
+						if (window.ethereum.chainId !== "0x1") {
+							await window.ethereum.request({
+								method: "wallet_switchEthereumChain",
+								params: [{ chainId: "0x1" }],
+							});
+						}
+						setAddress(account[0]);
+						account[0] &&
+							getBalance(account[0]).then((bal) =>
+								setBalance(bal)
+							);
+					}
+				);
+				window.ethereum.on("disconnect", () => {
+					setAddress("");
+					setBalance("");
+				});
+			}
+		} catch (error) {
+			console.log(error);
+		}
+		return () => {
+			window.ethereum.removeListener("accountsChanged", () => {});
+		};
+	}, []);
+
 	return (
 		<>
 			<Stack direction="row" justifyContent="flex-end"></Stack>
@@ -319,7 +359,7 @@ const MainStacking = () => {
 													width: "100%",
 													borderRadius: 10,
 												}}
-                                                onClick={() => setShow(true)}
+												onClick={() => setShow(true)}
 											>
 												Stake
 											</Button>

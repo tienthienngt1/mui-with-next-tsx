@@ -1,45 +1,21 @@
 import { ReactNode } from "react";
-import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useRouter } from "next/router";
 
 const variants = {
 	in: {
-		scale: 0.8,
-		y: 100,
-		x: "100%",
-		transition: {
-			duration: 0.4,
-		},
-	},
-	center: {
-		x: 0,
-		scale: 0.8,
-		transformOrigin: "top",
-		transition: {
-			duration: 0.4,
-		},
-	},
-	scaleUp: {
-		scale: 1,
+		opacity: 1,
 		y: 0,
 		transition: {
-			duration: 0.4,
-			delay: 0.5,
-		},
-	},
-	scaleDown: {
-		scale: 0.8,
-		y: 100,
-		transition: {
-			duration: 0.4,
+			duration: 0.5,
+			delay: 0.2,
 		},
 	},
 	out: {
 		opacity: 0,
-		x: "-100%",
+		y: 100,
 		transition: {
-			duration: 0.4,
-			delay: 0.5,
+			duration: 0.5,
 		},
 	},
 };
@@ -48,17 +24,16 @@ type Props = {
 };
 const TransitionEffect = ({ children }: Props) => {
 	const { asPath } = useRouter();
-	const shouldReduceMotion = useReducedMotion();
 
 	return (
 		<div className="effect-3">
 			<AnimatePresence initial={true} mode="wait">
 				<motion.div
 					key={asPath}
-					variants={!shouldReduceMotion ? variants : undefined}
-					initial="in"
-					animate={["center", "scaleUp"]}
-					exit={["scaleDown", "out"]}
+					variants={variants}
+					animate="in"
+					initial="out"
+					exit="out"
 				>
 					{children}
 				</motion.div>
