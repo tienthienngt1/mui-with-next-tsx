@@ -11,6 +11,7 @@ import {
 } from "@mui/material";
 import IconLottie from "components/commons/IconLottie.component";
 import { PRIMARY_COLOR } from "config/constants";
+import { connectWeb3 } from "core/connectWeb3";
 import { useState } from "react";
 
 type NotifyT = {
@@ -30,151 +31,319 @@ const Notify = ({ open, handleClose }: NotifyT) => {
 
 const MainStacking = () => {
 	const [isShow, setShow] = useState(false);
-
-	const handleConnect = () => setShow(true);
+	const [address, setAddress] = useState<string>();
+	const [balance, setBalance] = useState<string>();
+	const handleConnect = async () => {
+		const res = await connectWeb3();
+		if (res) {
+			setAddress(res.address);
+			setBalance(res.balance);
+		}
+	};
 	const handleClose = () => setShow(false);
 	return (
-		<Container sx={{ marginTop: 3 }}>
-			<Typography align="center" variant="h2" color="primary">
-				POOLS
-			</Typography>
-			<Grid container>
-				<Grid xs={12} md={4}>
-					<IconLottie />
-				</Grid>
-				<Grid xs={12} md={8}>
-					<Stack alignItems="center" direction="column">
-						<Box
-							alignItems="center"
-							sx={{
-								width: 300,
-								p: 4,
-								my: 10,
-								background: PRIMARY_COLOR,
-								borderRadius: 5,
-							}}
-						>
-							<Stack
-								justifyContent="space-around"
-								direction="row"
+		<>
+			<Stack direction="row" justifyContent="flex-end"></Stack>
+			<Container sx={{ marginTop: 3 }}>
+				<Typography align="center" variant="h2" color="primary">
+					POOLS
+				</Typography>
+				<Grid container>
+					<Grid item xs={12} md={4}>
+						<IconLottie />
+					</Grid>
+					<Grid item xs={12} md={8}>
+						<Stack alignItems="center" direction="column">
+							<Box
+								alignItems="center"
+								sx={{
+									width: 300,
+									p: 4,
+									my: 10,
+									background: PRIMARY_COLOR,
+									borderRadius: 5,
+								}}
 							>
-								<Avatar
-									src="/robosustake.png"
-									alt="logo"
-									sx={{ width: 80, height: 80 }}
-								/>
-								<Box
-									sx={{
-										width: "100%",
-									}}
+								{address && (
+									<Typography
+										gutterBottom
+										align="center"
+										color="secondary"
+									>
+										{`${address.slice(
+											0,
+											5
+										)}...${address.slice(-4)}
+                                        `}
+									</Typography>
+								)}
+								<Stack
+									justifyContent="space-around"
+									direction="row"
+								>
+									<Avatar
+										src="/robosustake.png"
+										alt="logo"
+										sx={{ width: 80, height: 80 }}
+									/>
+									<Box
+										sx={{
+											width: "100%",
+										}}
+									>
+										<Typography
+											variant="h6"
+											align="center"
+											color="primary.light"
+										>
+											Robosu Inu
+										</Typography>
+										<Typography
+											variant="subtitle2"
+											align="center"
+											color="primary.light"
+										>
+											No fee, No lock
+										</Typography>
+									</Box>
+								</Stack>
+								<Stack
+									sx={{ paddingTop: 2 }}
+									direction="row"
+									justifyContent="space-between"
 								>
 									<Typography
-										variant="h6"
-										align="center"
+										variant="body1"
+										color="primary.light"
+										gutterBottom
+									>
+										APR
+									</Typography>
+									<Typography
+										variant="body1"
+										color="primary.light"
+										gutterBottom
+									>
+										200%
+									</Typography>
+								</Stack>
+								<Stack
+									direction="row"
+									justifyContent="space-between"
+								>
+									<Typography
+										variant="body1"
+										color="primary.light"
+										gutterBottom
+									>
+										Stake
+									</Typography>
+									<Typography
+										variant="body1"
+										color="primary.light"
+										gutterBottom
+									>
+										Robosu Inu
+									</Typography>
+								</Stack>
+								<Stack
+									direction="row"
+									justifyContent="space-between"
+								>
+									<Typography
+										variant="body1"
+										color="primary.light"
+										gutterBottom
+									>
+										Earn
+									</Typography>
+									<Typography
+										gutterBottom
+										variant="body1"
 										color="primary.light"
 									>
 										Robosu Inu
 									</Typography>
+								</Stack>
+								<Stack
+									direction="row"
+									justifyContent="space-between"
+								>
 									<Typography
-										variant="subtitle2"
-										align="center"
-										color="primary.light"
+										variant="body1"
+										color="secondary"
+										gutterBottom
 									>
-										No fee, No lock
+										Robosu Inu
 									</Typography>
-								</Box>
-							</Stack>
-							<Stack
-								sx={{ paddingTop: 2 }}
-								direction="row"
-								justifyContent="space-between"
-							>
-								<Typography
-									variant="body1"
-									color="primary.light"
-									gutterBottom
-								>
-									APR
-								</Typography>
-								<Typography
-									variant="body1"
-									color="primary.light"
-									gutterBottom
-								>
-									200%
-								</Typography>
-							</Stack>
-							<Stack
-								direction="row"
-								justifyContent="space-between"
-							>
-								<Typography
-									variant="body1"
-									color="primary.light"
-									gutterBottom
-								>
-									Stake
-								</Typography>
-								<Typography
-									variant="body1"
-									color="primary.light"
-									gutterBottom
-								>
-									Robosu Inu
-								</Typography>
-							</Stack>
-							<Stack
-								direction="row"
-								justifyContent="space-between"
-							>
-								<Typography
-									variant="body1"
-									color="primary.light"
-									gutterBottom
-								>
-									Earn
-								</Typography>
-								<Typography
-									gutterBottom
-									variant="body1"
-									color="primary.light"
-								>
-									Robosu Inu
-								</Typography>
-							</Stack>
-							<Stack
-								direction="row"
-								justifyContent="space-between"
-							>
-								<Typography
-									variant="body1"
-									color="secondary"
-									gutterBottom
-								>
-									Robosu Inu
-								</Typography>
-								<Typography
-									gutterBottom
-									variant="body1"
-									color="secondary"
-								>
-									Available
-								</Typography>
-							</Stack>
-							<Button
-								color="secondary"
-								variant="contained"
-								sx={{ width: "100%", my: 2, borderRadius: 10 }}
-								onClick={handleConnect}
-							>
-								Connect Wallet
-							</Button>
-						</Box>
-					</Stack>
+									<Typography
+										gutterBottom
+										variant="body1"
+										color="secondary"
+									>
+										Available
+									</Typography>
+								</Stack>
+
+								{!address ? (
+									<Button
+										color="secondary"
+										variant="contained"
+										sx={{
+											width: "100%",
+											my: 2,
+											borderRadius: 10,
+										}}
+										onClick={handleConnect}
+									>
+										Connect Wallet
+									</Button>
+								) : (
+									<>
+										<Stack
+											direction="row"
+											justifyContent="flex-start"
+										>
+											<Typography
+												variant="body1"
+												color="secondary"
+												gutterBottom
+											>
+												$RSI
+											</Typography>
+											<Typography
+												variant="body1"
+												color="primary.light"
+												gutterBottom
+												sx={{ marginLeft: 1 }}
+											>
+												EARNED
+											</Typography>
+										</Stack>
+										<Stack
+											direction="row"
+											justifyContent="space-between"
+											alignItems="center"
+										>
+											<Typography
+												variant="body1"
+												color="secondary"
+												gutterBottom
+											>
+												0
+											</Typography>
+											<Button
+												disabled
+												color="secondary"
+												variant="contained"
+												sx={{
+													borderRadius: 10,
+												}}
+											>
+												Harvest
+											</Button>
+										</Stack>
+										<Stack
+											direction="row"
+											justifyContent="flex-start"
+											alignItems="center"
+										>
+											<Typography
+												variant="body1"
+												color="secondary"
+												gutterBottom
+											>
+												$RSI
+											</Typography>
+											<Typography
+												variant="body1"
+												color="primary.light"
+												gutterBottom
+												sx={{ marginLeft: 1 }}
+											>
+												STAKED
+											</Typography>
+										</Stack>
+										<Stack
+											direction="row"
+											justifyContent="space-between"
+											alignItems="center"
+										>
+											<Typography
+												variant="body1"
+												color="secondary"
+												gutterBottom
+											>
+												Avalable
+											</Typography>
+											<Typography
+												variant="body1"
+												color="primary.light"
+												gutterBottom
+												sx={{ marginLeft: 1 }}
+											>
+												{balance ?? 0}
+											</Typography>
+										</Stack>
+										<Stack
+											direction="row"
+											justifyContent="space-between"
+											alignItems="center"
+										>
+											<Typography
+												variant="body1"
+												color="secondary"
+												gutterBottom
+											>
+												Staked
+											</Typography>
+											<Typography
+												variant="body1"
+												color="primary.light"
+												gutterBottom
+												sx={{ marginLeft: 1 }}
+											>
+												0
+											</Typography>
+										</Stack>
+										<Stack
+											direction="row"
+											justifyContent="space-between"
+											alignItems="center"
+											spacing={2}
+										>
+											<Button
+												color="secondary"
+												variant="contained"
+												sx={{
+													width: "100%",
+													borderRadius: 10,
+												}}
+                                                onClick={() => setShow(true)}
+											>
+												Stake
+											</Button>
+											<Button
+												disabled
+												color="secondary"
+												variant="contained"
+												sx={{
+													width: "100%",
+													borderRadius: 10,
+												}}
+											>
+												Withdraw
+											</Button>
+										</Stack>
+									</>
+								)}
+							</Box>
+						</Stack>
+					</Grid>
 				</Grid>
-			</Grid>
-			<Notify open={isShow} handleClose={handleClose} />
-		</Container>
+				<Notify open={isShow} handleClose={handleClose} />
+			</Container>
+		</>
 	);
 };
 

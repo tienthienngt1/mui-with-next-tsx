@@ -1,31 +1,7 @@
-import {
-	Divider,
-	List,
-	ListItem,
-	Stack,
-	Drawer,
-	Typography,
-} from "@mui/material";
-import Grid from "@mui/material/Unstable_Grid2";
+import { Stack } from "@mui/material";
 import Image from "next/image";
-import Button from "@mui/material/Button";
 import Link from "components/commons/Link.component";
-import Box from "@mui/material/Box";
-import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
-import { Menu } from "@mui/icons-material";
 import Container from "@mui/material/Container";
-import { PRIMARY_COLOR } from "config/constants";
-import ButtonCustom from "./ButtonCustom.component";
-import { styled } from "@mui/system";
-
-const list = [
-	{
-		title: "Stacking",
-		href: "/stacking",
-		target: "_self",
-	},
-];
 
 const Nav = () => {
 	return (
@@ -45,11 +21,6 @@ const Nav = () => {
 						style={{ cursor: "pointer" }}
 					/>
 				</Link>
-				{/* {list.map((l) => (
-					<Link href={l.href} target={l.target}>
-						<ButtonCustom key={l.title} title={l.title} />
-					</Link>
-				))} */}
 			</Stack>
 		</Container>
 	);

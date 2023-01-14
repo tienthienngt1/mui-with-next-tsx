@@ -23,7 +23,8 @@
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "react-lottie": "^1.2.3"
+    "react-lottie": "^1.2.3",
+    "web3": "^1.7.4"
   },
   "devDependencies": {
     "@types/node": "latest",

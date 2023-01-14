@@ -39,6 +39,7 @@ export default function MyApp(props: MyAppProps) {
 						name="viewport"
 						content="initial-scale=1, width=device-width"
 					/>
+					<title>Robosu Inu</title>
 				</Head>
 				<ThemeProvider theme={theme}>
 					{isLoading ? (

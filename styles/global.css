@@ -12,3 +12,10 @@ body {
 	padding: 0;
 	margin: 0;
 }
+.MuiButtonBase-root:disabled {
+	cursor: not-allowed;
+	pointer-events: auto;
+	opacity: 0.7;
+	background-color: #19857b;
+	color: #fff;
+}
