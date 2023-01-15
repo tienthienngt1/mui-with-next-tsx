@@ -1,14 +1,4 @@
-import {
-	Avatar,
-	Box,
-	Button,
-	Container,
-	Grid,
-	Stack,
-	Typography,
-	Snackbar,
-	Alert,
-} from "@mui/material";
+import { Avatar, Box, Button, Container, Grid, Stack, Typography, Snackbar, Alert } from "@mui/material";
 import IconLottie from "components/commons/IconLottie.component";
 import { PRIMARY_COLOR } from "config/constants";
 import { connectWeb3, getBalance } from "core/connectWeb3";
@@ -46,28 +36,22 @@ const MainStacking = () => {
 	useEffect(() => {
 		try {
 			if (window.ethereum) {
-				window.ethereum.on(
-					"accountsChanged",
-					async (account: string[]) => {
-						if (address === account[0]) return;
-						if (!account[0]) {
-							setAddress("");
-							setBalance("");
-							return;
-						}
-						if (window.ethereum.chainId !== "0x1") {
-							await window.ethereum.request({
-								method: "wallet_switchEthereumChain",
-								params: [{ chainId: "0x1" }],
-							});
-						}
-						setAddress(account[0]);
-						account[0] &&
-							getBalance(account[0]).then((bal) =>
-								setBalance(bal)
-							);
+				window.ethereum.on("accountsChanged", async (account: string[]) => {
+					if (address === account[0]) return;
+					if (!account[0]) {
+						setAddress("");
+						setBalance("");
+						return;
 					}
-				);
+					if (window.ethereum.chainId !== "0x1") {
+						await window.ethereum.request({
+							method: "wallet_switchEthereumChain",
+							params: [{ chainId: "0x1" }],
+						});
+					}
+					setAddress(account[0]);
+					account[0] && getBalance(account[0]).then((bal) => setBalance(bal));
+				});
 				window.ethereum.on("disconnect", () => {
 					setAddress("");
 					setBalance("");
@@ -76,9 +60,6 @@ const MainStacking = () => {
 		} catch (error) {
 			console.log(error);
 		}
-		return () => {
-			window.ethereum.removeListener("accountsChanged", () => {});
-		};
 	}, []);
 
 	return (
@@ -105,122 +86,55 @@ const MainStacking = () => {
 								}}
 							>
 								{address && (
-									<Typography
-										gutterBottom
-										align="center"
-										color="secondary"
-									>
-										{`${address.slice(
-											0,
-											5
-										)}...${address.slice(-4)}
+									<Typography gutterBottom align="center" color="secondary">
+										{`${address.slice(0, 5)}...${address.slice(-4)}
                                         `}
 									</Typography>
 								)}
-								<Stack
-									justifyContent="space-around"
-									direction="row"
-								>
-									<Avatar
-										src="/robosustake.png"
-										alt="logo"
-										sx={{ width: 80, height: 80 }}
-									/>
+								<Stack justifyContent="space-around" direction="row">
+									<Avatar src="/robosustake.png" alt="logo" sx={{ width: 80, height: 80 }} />
 									<Box
 										sx={{
 											width: "100%",
 										}}
 									>
-										<Typography
-											variant="h6"
-											align="center"
-											color="primary.light"
-										>
+										<Typography variant="h6" align="center" color="primary.light">
 											Robosu Inu
 										</Typography>
-										<Typography
-											variant="subtitle2"
-											align="center"
-											color="primary.light"
-										>
+										<Typography variant="subtitle2" align="center" color="primary.light">
 											No fee, No lock
 										</Typography>
 									</Box>
 								</Stack>
-								<Stack
-									sx={{ paddingTop: 2 }}
-									direction="row"
-									justifyContent="space-between"
-								>
-									<Typography
-										variant="body1"
-										color="primary.light"
-										gutterBottom
-									>
+								<Stack sx={{ paddingTop: 2 }} direction="row" justifyContent="space-between">
+									<Typography variant="body1" color="primary.light" gutterBottom>
 										APR
 									</Typography>
-									<Typography
-										variant="body1"
-										color="primary.light"
-										gutterBottom
-									>
+									<Typography variant="body1" color="primary.light" gutterBottom>
 										200%
 									</Typography>
 								</Stack>
-								<Stack
-									direction="row"
-									justifyContent="space-between"
-								>
-									<Typography
-										variant="body1"
-										color="primary.light"
-										gutterBottom
-									>
+								<Stack direction="row" justifyContent="space-between">
+									<Typography variant="body1" color="primary.light" gutterBottom>
 										Stake
 									</Typography>
-									<Typography
-										variant="body1"
-										color="primary.light"
-										gutterBottom
-									>
+									<Typography variant="body1" color="primary.light" gutterBottom>
 										Robosu Inu
 									</Typography>
 								</Stack>
-								<Stack
-									direction="row"
-									justifyContent="space-between"
-								>
-									<Typography
-										variant="body1"
-										color="primary.light"
-										gutterBottom
-									>
+								<Stack direction="row" justifyContent="space-between">
+									<Typography variant="body1" color="primary.light" gutterBottom>
 										Earn
 									</Typography>
-									<Typography
-										gutterBottom
-										variant="body1"
-										color="primary.light"
-									>
+									<Typography gutterBottom variant="body1" color="primary.light">
 										Robosu Inu
 									</Typography>
 								</Stack>
-								<Stack
-									direction="row"
-									justifyContent="space-between"
-								>
-									<Typography
-										variant="body1"
-										color="secondary"
-										gutterBottom
-									>
+								<Stack direction="row" justifyContent="space-between">
+									<Typography variant="body1" color="secondary" gutterBottom>
 										Robosu Inu
 									</Typography>
-									<Typography
-										gutterBottom
-										variant="body1"
-										color="secondary"
-									>
+									<Typography gutterBottom variant="body1" color="secondary">
 										Available
 									</Typography>
 								</Stack>
@@ -240,36 +154,16 @@ const MainStacking = () => {
 									</Button>
 								) : (
 									<>
-										<Stack
-											direction="row"
-											justifyContent="flex-start"
-										>
-											<Typography
-												variant="body1"
-												color="secondary"
-												gutterBottom
-											>
+										<Stack direction="row" justifyContent="flex-start">
+											<Typography variant="body1" color="secondary" gutterBottom>
 												$RSI
 											</Typography>
-											<Typography
-												variant="body1"
-												color="primary.light"
-												gutterBottom
-												sx={{ marginLeft: 1 }}
-											>
+											<Typography variant="body1" color="primary.light" gutterBottom sx={{ marginLeft: 1 }}>
 												EARNED
 											</Typography>
 										</Stack>
-										<Stack
-											direction="row"
-											justifyContent="space-between"
-											alignItems="center"
-										>
-											<Typography
-												variant="body1"
-												color="secondary"
-												gutterBottom
-											>
+										<Stack direction="row" justifyContent="space-between" alignItems="center">
+											<Typography variant="body1" color="secondary" gutterBottom>
 												0
 											</Typography>
 											<Button
@@ -283,75 +177,31 @@ const MainStacking = () => {
 												Harvest
 											</Button>
 										</Stack>
-										<Stack
-											direction="row"
-											justifyContent="flex-start"
-											alignItems="center"
-										>
-											<Typography
-												variant="body1"
-												color="secondary"
-												gutterBottom
-											>
+										<Stack direction="row" justifyContent="flex-start" alignItems="center">
+											<Typography variant="body1" color="secondary" gutterBottom>
 												$RSI
 											</Typography>
-											<Typography
-												variant="body1"
-												color="primary.light"
-												gutterBottom
-												sx={{ marginLeft: 1 }}
-											>
+											<Typography variant="body1" color="primary.light" gutterBottom sx={{ marginLeft: 1 }}>
 												STAKED
 											</Typography>
 										</Stack>
-										<Stack
-											direction="row"
-											justifyContent="space-between"
-											alignItems="center"
-										>
-											<Typography
-												variant="body1"
-												color="secondary"
-												gutterBottom
-											>
+										<Stack direction="row" justifyContent="space-between" alignItems="center">
+											<Typography variant="body1" color="secondary" gutterBottom>
 												Avalable
 											</Typography>
-											<Typography
-												variant="body1"
-												color="primary.light"
-												gutterBottom
-												sx={{ marginLeft: 1 }}
-											>
+											<Typography variant="body1" color="primary.light" gutterBottom sx={{ marginLeft: 1 }}>
 												{balance ?? 0}
 											</Typography>
 										</Stack>
-										<Stack
-											direction="row"
-											justifyContent="space-between"
-											alignItems="center"
-										>
-											<Typography
-												variant="body1"
-												color="secondary"
-												gutterBottom
-											>
+										<Stack direction="row" justifyContent="space-between" alignItems="center">
+											<Typography variant="body1" color="secondary" gutterBottom>
 												Staked
 											</Typography>
-											<Typography
-												variant="body1"
-												color="primary.light"
-												gutterBottom
-												sx={{ marginLeft: 1 }}
-											>
+											<Typography variant="body1" color="primary.light" gutterBottom sx={{ marginLeft: 1 }}>
 												0
 											</Typography>
 										</Stack>
-										<Stack
-											direction="row"
-											justifyContent="space-between"
-											alignItems="center"
-											spacing={2}
-										>
+										<Stack direction="row" justifyContent="space-between" alignItems="center" spacing={2}>
 											<Button
 												color="secondary"
 												variant="contained"
