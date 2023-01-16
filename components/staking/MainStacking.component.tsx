@@ -156,7 +156,7 @@ const MainStacking = () => {
 									<>
 										<Stack direction="row" justifyContent="flex-start">
 											<Typography variant="body1" color="secondary" gutterBottom>
-												$RSI
+												$ROBOSU
 											</Typography>
 											<Typography variant="body1" color="primary.light" gutterBottom sx={{ marginLeft: 1 }}>
 												EARNED
@@ -179,7 +179,7 @@ const MainStacking = () => {
 										</Stack>
 										<Stack direction="row" justifyContent="flex-start" alignItems="center">
 											<Typography variant="body1" color="secondary" gutterBottom>
-												$RSI
+												$ROBOSU
 											</Typography>
 											<Typography variant="body1" color="primary.light" gutterBottom sx={{ marginLeft: 1 }}>
 												STAKED
