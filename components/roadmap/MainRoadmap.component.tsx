@@ -49,127 +49,68 @@ export default function MainRoadmap() {
 			>
 				<Timeline position="alternate">
 					<TimelineItem>
-						<TimelineOppositeContent
-							sx={{ m: "auto 0" }}
-							align="right"
-							variant="h6"
-							color="primary"
-						>
+						<TimelineOppositeContent sx={{ m: "auto 0" }} align="right" variant="h6" color="primary">
 							PHASE 1
 						</TimelineOppositeContent>
 						<TimelineSeparator>
-							<TimelineConnector
-								sx={{ bgcolor: "primary.main" }}
-							/>
+							<TimelineConnector sx={{ bgcolor: "primary.main" }} />
 							<TimelineDot color="primary">
 								<WbIncandescentIcon />
 							</TimelineDot>
-							<TimelineConnector
-								sx={{ bgcolor: "primary.main" }}
-							/>
+							<TimelineConnector sx={{ bgcolor: "primary.main" }} />
 						</TimelineSeparator>
 						<TimelineContent sx={{ py: "12px", px: 2 }}>
-							<Typography
-								color="primary"
-								variant="h6"
-								component="span"
-							>
+							<Typography color="primary" variant="h6" component="span">
 								Robosu Inu is Born
 							</Typography>
-							<Typography color="primary">
-								The AI and robotics industry in 2022 was grow
-								very strongly{" "}
-							</Typography>
+							<Typography color="primary">The AI and robotics industry in 2022 was grow very strongly </Typography>
 						</TimelineContent>
 					</TimelineItem>
 					<TimelineItem>
-						<TimelineOppositeContent
-							sx={{ m: "auto 0" }}
-							variant="h6"
-							color="primary"
-						>
+						<TimelineOppositeContent sx={{ m: "auto 0" }} variant="h6" color="primary">
 							PHASE 2
 						</TimelineOppositeContent>
 						<TimelineSeparator>
-							<TimelineConnector
-								sx={{ bgcolor: "primary.main" }}
-							/>
+							<TimelineConnector sx={{ bgcolor: "primary.main" }} />
 							<TimelineDot color="primary">
 								<Groups2Icon />
 							</TimelineDot>
-							<TimelineConnector
-								sx={{ bgcolor: "primary.main" }}
-							/>
+							<TimelineConnector sx={{ bgcolor: "primary.main" }} />
 						</TimelineSeparator>
 						<TimelineContent sx={{ py: "12px", px: 2 }}>
 							<Typography color="primary" variant="h6">
 								Preparing and building community
 							</Typography>
-							<Typography color="primary">
-								The Robosu Inu's team steps forward from the
-								community
-							</Typography>
-							<Typography color="primary">
-								Launching channels on Social Media
-							</Typography>
-							<Typography color="primary">
-								Marketing campaign before launch
-							</Typography>
-							<Typography color="primary">
-								Cooperation with many influencers
-							</Typography>
+							<Typography color="primary">The Robosu Inu's team steps forward from the community</Typography>
+							<Typography color="primary">Launching channels on Social Media</Typography>
+							<Typography color="primary">Marketing campaign before launch</Typography>
+							<Typography color="primary">Cooperation with many influencers</Typography>
 						</TimelineContent>
 					</TimelineItem>
 					<TimelineItem>
-						<TimelineOppositeContent
-							sx={{ m: "auto 0" }}
-							variant="h6"
-							color="primary"
-						>
+						<TimelineOppositeContent sx={{ m: "auto 0" }} variant="h6" color="primary">
 							PHASE 3
 						</TimelineOppositeContent>
 						<TimelineSeparator>
-							<TimelineConnector
-								sx={{ bgcolor: "primary.main" }}
-							/>
+							<TimelineConnector sx={{ bgcolor: "primary.main" }} />
 							<TimelineDot color="primary">
 								<CodeIcon />
 							</TimelineDot>
-							<TimelineConnector
-								sx={{ bgcolor: "primary.main" }}
-							/>
+							<TimelineConnector sx={{ bgcolor: "primary.main" }} />
 						</TimelineSeparator>
 						<TimelineContent sx={{ py: "12px", px: 2 }}>
-							<Typography
-								color="primary"
-								variant="h6"
-								component="span"
-							>
+							<Typography color="primary" variant="h6" component="span">
 								Launching Robosu Inu
 							</Typography>
-							<Typography color="primary">
-								Smart Contract creation and verification
-							</Typography>
-							<Typography color="primary">
-								Website launch
-							</Typography>
-							<Typography color="primary">
-								UniSwap V3 listing
-							</Typography>
-							<Typography color="primary">
-								Launching Robosu AI Bot
-							</Typography>
-							<Typography color="primary.dark">
-								Launching stake ecosystem
-							</Typography>
+							<Typography color="primary">Smart Contract creation and verification</Typography>
+							<Typography color="primary">Website launch</Typography>
+							<Typography color="primary">UniSwap V2 listing</Typography>
+							<Typography color="primary">Launching Robosu AI Bot</Typography>
+							<Typography color="primary.dark">Launching stake ecosystem</Typography>
 						</TimelineContent>
 					</TimelineItem>
 					<TimelineItem>
-						<TimelineOppositeContent
-							sx={{ m: "auto 0" }}
-							variant="h6"
-							color="primary.dark"
-						>
+						<TimelineOppositeContent sx={{ m: "auto 0" }} variant="h6" color="primary.dark">
 							PHASE 4
 						</TimelineOppositeContent>
 						<TimelineSeparator>
@@ -180,34 +121,18 @@ export default function MainRoadmap() {
 							<TimelineConnector />
 						</TimelineSeparator>
 						<TimelineContent sx={{ py: "12px", px: 2 }}>
-							<Typography
-								color="primary.dark"
-								variant="h6"
-								component="span"
-							></Typography>
+							<Typography color="primary.dark" variant="h6" component="span"></Typography>
 							<Typography color="primary.dark" variant="h6">
 								Continue marketing
 							</Typography>
-							<Typography color="primary.dark">
-								Trending on dextools
-							</Typography>
-							<Typography color="primary.dark">
-								Listing on CGK and CMC
-							</Typography>
-							<Typography color="primary.dark">
-								Promoting on Youtube and Twitter
-							</Typography>
-							<Typography color="primary.dark">
-								Preparation for Top 20 CEX listing
-							</Typography>
+							<Typography color="primary.dark">Trending on dextools</Typography>
+							<Typography color="primary.dark">Listing on CGK and CMC</Typography>
+							<Typography color="primary.dark">Promoting on Youtube and Twitter</Typography>
+							<Typography color="primary.dark">Preparation for Top 20 CEX listing</Typography>
 						</TimelineContent>
 					</TimelineItem>
 					<TimelineItem>
-						<TimelineOppositeContent
-							sx={{ m: "auto 0" }}
-							variant="h6"
-							color="primary.dark"
-						>
+						<TimelineOppositeContent sx={{ m: "auto 0" }} variant="h6" color="primary.dark">
 							PHASE 5
 						</TimelineOppositeContent>
 						<TimelineSeparator>
@@ -218,29 +143,16 @@ export default function MainRoadmap() {
 							<TimelineConnector />
 						</TimelineSeparator>
 						<TimelineContent sx={{ py: "12px", px: 2 }}>
-							<Typography
-								color="primary.dark"
-								variant="h6"
-								component="span"
-							></Typography>
+							<Typography color="primary.dark" variant="h6" component="span"></Typography>
 							<Typography color="primary.dark" variant="h6">
 								Developing Robosu Inu's Metaverse Ecosystem
 							</Typography>
-							<Typography color="primary.dark">
-								The metaverse era exploded and Robosu Inu also
-								wanted to enter
-							</Typography>
-							<Typography color="primary.dark">
-								Releasing Robosu Inu's NFT collection
-							</Typography>
+							<Typography color="primary.dark">The metaverse era exploded and Robosu Inu also wanted to enter</Typography>
+							<Typography color="primary.dark">Releasing Robosu Inu's NFT collection</Typography>
 						</TimelineContent>
 					</TimelineItem>
 					<TimelineItem>
-						<TimelineOppositeContent
-							sx={{ m: "auto 0" }}
-							variant="h6"
-							color="primary.dark"
-						>
+						<TimelineOppositeContent sx={{ m: "auto 0" }} variant="h6" color="primary.dark">
 							PHASE 6
 						</TimelineOppositeContent>
 						<TimelineSeparator>
@@ -251,11 +163,7 @@ export default function MainRoadmap() {
 							<TimelineConnector />
 						</TimelineSeparator>
 						<TimelineContent sx={{ py: "12px", px: 2 }}>
-							<Typography
-								color="primary.dark"
-								variant="h6"
-								component="span"
-							></Typography>
+							<Typography color="primary.dark" variant="h6" component="span"></Typography>
 							<Typography color="primary.dark" variant="h6">
 								More to be announced...
 							</Typography>

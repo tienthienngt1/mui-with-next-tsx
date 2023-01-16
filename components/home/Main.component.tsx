@@ -35,12 +35,7 @@ const Main = () => {
 								delay: 2,
 							}}
 						>
-							<Image
-								src="/robosu.png"
-								alt="robosu"
-								width={250}
-								height={250}
-							/>
+							<Image src="/robosu.png" alt="robosu" width={250} height={250} />
 						</motion.div>
 					</Box>
 				</Grid>
@@ -66,48 +61,19 @@ const Main = () => {
 							initial={{ y: 500, opacity: 0 }}
 						>
 							<Box sx={{ p: 2 }}>
-								<Typography
-									variant="h3"
-									gutterBottom
-									align="center"
-									sx={{ color: "#fff" }}
-								>
-									<span style={{ color: PRIMARY_COLOR }}>
-										$RSI
-									</span>{" "}
-									TOKEN TO THE MOON
+								<Typography variant="h3" gutterBottom align="center" sx={{ color: "#fff" }}>
+									<span style={{ color: PRIMARY_COLOR }}>$ROBOSU</span> TOKEN TO THE MOON
 								</Typography>
-								<Typography
-									variant="h6"
-									sx={{ color: "rgb(255,255,255,0.8)", p: 1 }}
-									gutterBottom
-									align="justify"
-								>
-									A highly advanced piece of technology that
-									has been designed to mimic the movements and
-									behaviors of a real dog. This robot are
-									equipped with sensors, advanced programming,
-									and AI capabilities that allow them to
-									learn, adapt, and interact with their
-									environment in a lifelike manner. They can
-									be used for a variety of purposes.
+								<Typography variant="h6" sx={{ color: "rgb(255,255,255,0.8)", p: 1 }} gutterBottom align="justify">
+									A highly advanced piece of technology that has been designed to mimic the movements and behaviors of a real dog. This robot are equipped with sensors, advanced
+									programming, and AI capabilities that allow them to learn, adapt, and interact with their environment in a lifelike manner. They can be used for a variety of
+									purposes.
 								</Typography>
-								<Typography
-									align="center"
-									color="secondary"
-									variant="h6"
-									sx={{ marginTop: 2 }}
-								>
+								<Typography align="center" color="secondary" variant="h6" sx={{ marginTop: 2 }}>
 									Buy Tax: {BUY_TAX} | Sell Tax: {SELL_TAX}
 								</Typography>
 							</Box>
-							<Stack
-								justifyContent="center"
-								alignItems="center"
-								spacing={2}
-								direction={{ xs: "column", md: "row" }}
-								sx={{ marginTop: 1 }}
-							>
+							<Stack justifyContent="center" alignItems="center" spacing={2} direction={{ xs: "column", md: "row" }} sx={{ marginTop: 1 }}>
 								<Link href={LINK_TOKEN} target="_blank">
 									<ButtonCustom
 										//@ts-ignore

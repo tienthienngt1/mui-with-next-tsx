@@ -1,23 +1,16 @@
-import {
-	Avatar,
-	Box,
-	Container,
-	IconButton,
-	Stack,
-	Typography,
-} from "@mui/material";
+import { Avatar, Box, Container, IconButton, Stack, Typography } from "@mui/material";
 import { PRIMARY_COLOR } from "../../config/constants";
 import { useWidthWindow } from "hooks/useWidthWindow";
 import { motion } from "framer-motion";
 import Link from "components/commons/Link.component";
 
 const devList = [
-	{
-		name: "Biden",
-		career: "CEO",
-		href: "https://t.me/",
-		src: "/avatarCeo.png",
-	},
+	// {
+	// 	name: "Biden",
+	// 	career: "CEO",
+	// 	href: "https://t.me/",
+	// 	src: "/avatarCeo.png",
+	// },
 	{
 		name: "AntLert",
 		career: "CMO",
@@ -58,13 +51,7 @@ const MainAbout = () => {
 					ABOUT US
 				</Typography>
 			</motion.div>
-			<Stack
-				direction={width && width < 900 ? "column" : "row"}
-				alignItems="center"
-				justifyContent="center"
-				sx={{ my: 5 }}
-				spacing={5}
-			>
+			<Stack direction={width && width < 900 ? "column" : "row"} alignItems="center" justifyContent="center" sx={{ my: 5 }} spacing={5}>
 				{devList.map((d, k) => (
 					<motion.div
 						key={d.name}
@@ -97,24 +84,10 @@ const MainAbout = () => {
 									background: PRIMARY_COLOR,
 								}}
 							>
-								<Stack
-									direction="column"
-									justifyContent="center"
-									alignItems="center"
-									spacing={2}
-									sx={{ padding: "10px 0" }}
-								>
-									<Avatar
-										src={d.src}
-										sx={{ width: 100, height: 100 }}
-										alt="avatar"
-									/>
-									<Typography sx={{ color: "#fff" }}>
-										{d.name}
-									</Typography>
-									<Typography sx={{ color: "#fff" }}>
-										{d.career}
-									</Typography>
+								<Stack direction="column" justifyContent="center" alignItems="center" spacing={2} sx={{ padding: "10px 0" }}>
+									<Avatar src={d.src} sx={{ width: 100, height: 100 }} alt="avatar" />
+									<Typography sx={{ color: "#fff" }}>{d.name}</Typography>
+									<Typography sx={{ color: "#fff" }}>{d.career}</Typography>
 								</Stack>
 							</Box>
 						</Link>
