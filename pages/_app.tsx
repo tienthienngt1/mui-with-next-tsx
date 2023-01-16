@@ -20,25 +20,22 @@ interface MyAppProps extends AppProps {
 }
 
 export default function MyApp(props: MyAppProps) {
-	const {
-		Component,
-		emotionCache = clientSideEmotionCache,
-		pageProps,
-	} = props;
+	const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
 	const [isLoading, setLoading] = useState(true);
+	const [width, setWidth] = useState<number>();
 	useEffect(() => {
 		setTimeout(() => {
 			setLoading(false);
 		}, 3000);
 	}, []);
+	useEffect(() => {
+		setWidth(window.innerWidth);
+	}, []);
 	return (
 		<>
 			<CacheProvider value={emotionCache}>
 				<Head>
-					<meta
-						name="viewport"
-						content="initial-scale=1, width=device-width"
-					/>
+					<meta name="viewport" content={width && width < 400 ? "width=400,shrink-to-fit=no, maximum-scale=0.7" : "initial-scale=1, width=device-width"} />
 					<title>Robosu Inu</title>
 				</Head>
 				<ThemeProvider theme={theme}>
