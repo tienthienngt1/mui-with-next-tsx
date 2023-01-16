@@ -70,7 +70,10 @@ const Main = () => {
 									purposes.
 								</Typography>
 								<Typography align="center" color="secondary" variant="h6" sx={{ marginTop: 2 }}>
-									Buy Tax: {BUY_TAX} | Sell Tax: {SELL_TAX}
+									Launch: Buy Tax: {"20%"} | Sell Tax: {"25%"}
+								</Typography>
+								<Typography align="center" color="secondary" variant="h6" sx={{ marginTop: 2 }}>
+									After 15 minutes: Buy Tax: {BUY_TAX} | Sell Tax: {SELL_TAX}
 								</Typography>
 							</Box>
 							<Stack justifyContent="center" alignItems="center" spacing={2} direction={{ xs: "column", md: "row" }} sx={{ marginTop: 1 }}>
